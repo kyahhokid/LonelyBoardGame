@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    // 無効化時
+    <item android:drawable="@drawable/button_push"
+        android:state_enabled="false"/>
+    // ボタンタップ時
+    <item android:drawable="@drawable/button_push"
+        android:state_pressed="true"/>
+    // デフォルト
+    <item android:drawable="@drawable/button_default"/>
+
+</selector>

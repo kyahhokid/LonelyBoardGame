@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BoardGames</string>
+    <string name="change">交換する</string>>
+    <string name="cucco_card_image_description">ククカード</string>
+    <string name="cucco_face_image_description">プレイヤーの顔アイコン</string>
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CuccoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:id="@+id/cucco_all_npc_linear_layout"/>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:id="@+id/cucco_player_relative_layout"
+            android:background="@drawable/background">
+
+            <TextView
+                android:id="@+id/cucco_player_coins_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginStart="40dp"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:text="100 Coins" />
+
+            <ImageView
+                android:id="@+id/cucco_player_card_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_above="@id/cucco_player_coins_text_view"
+                android:layout_alignParentStart="true"
+                android:scaleType="fitStart"
+                android:src="@drawable/one"
+                android:baselineAlignBottom="true"
+                android:adjustViewBounds="true"/>
+
+            <Button
+                android:id="@+id/cucco_change_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_toEndOf="@id/cucco_player_card_image_view"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/button"
+                android:text="@string/change" />
+
+            <Button
+                android:id="@+id/cucco_stay_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_toEndOf="@id/cucco_player_card_image_view"
+                android:layout_below="@id/cucco_change_button"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/button"
+                android:text="@string/change" />
+
+            <Button
+                android:id="@+id/cucco_cucco_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_toEndOf="@id/cucco_player_card_image_view"
+                android:layout_below="@id/cucco_stay_button"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/button"
+                android:text="@string/change" />
+
+            <ImageView
+                android:id="@+id/cucco_player_face_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@id/cucco_player_card_image_view"
+                android:layout_below="@id/cucco_cucco_button"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/flan_normal_face"/>
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
