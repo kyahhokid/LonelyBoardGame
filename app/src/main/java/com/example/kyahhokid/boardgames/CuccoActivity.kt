@@ -8,12 +8,15 @@ import android.widget.LinearLayout.HORIZONTAL
 import android.widget.LinearLayout.VERTICAL
 import kotlinx.android.synthetic.main.activity_cucco.*
 
+/**
+ * ククのゲーム画面のアクティビティ
+ */
 class CuccoActivity : AppCompatActivity() {
     companion object {
-
-       const val END_NPC_ID_INTENT_KEY = "END_NPC_Id"
+        // 最後のnpcのIDを受け渡しするためのインテントID
+        const val END_NPC_ID_INTENT_KEY = "END_NPC_Id"
     }
-
+    // 最後のnpcのID
     private var EndNPCId = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
