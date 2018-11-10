@@ -7,7 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_cucco_npc.*
 
-public class CuccoNPCFragment: Fragment() {
+/**
+ * ククのnpc一人分のフラグメント<br>
+ *<br>
+ * npcの人数によって余白の大きさが変動するため、
+ * アクティビティから「何段でnpcを表示するか」を取得して余白を計算している。<br>
+ *<br>
+ * またview同士の間隔は、LinearLayoutのweightを使って、割合で指定している。
+ *
+ */
+class CuccoNPCFragment: Fragment() {
 
     companion object {
         fun newInstance(maxRaw : Int): CuccoNPCFragment {

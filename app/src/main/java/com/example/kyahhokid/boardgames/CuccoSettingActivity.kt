@@ -7,6 +7,13 @@ import android.view.View
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_setting_cucco.*
 
+/**
+ * ククの設定を行うアクティビティ。<br>
+ *<br>
+ * 現在はnpcの人数の設定を行っている。<br>
+ *<br>
+ * 後に、設定画面の項目を増やす予定なので、その時にリファクタリングを行う。
+ */
 class CuccoSettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +23,7 @@ class CuccoSettingActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        var spinnerItems:MutableList<String> = mutableListOf()
+        val spinnerItems:MutableList<String> = mutableListOf()
 
         for(i in 1..14) {
             spinnerItems.add(i.toString())
