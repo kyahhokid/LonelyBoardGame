@@ -7,6 +7,8 @@ import android.widget.*
 import android.widget.LinearLayout.HORIZONTAL
 import android.widget.LinearLayout.VERTICAL
 import com.example.kyahhokid.boardgames.R
+import com.example.kyahhokid.boardgames.cucco.data.Card
+import com.example.kyahhokid.boardgames.cucco.model.CardPool
 import kotlinx.android.synthetic.main.activity_cucco.*
 
 /**

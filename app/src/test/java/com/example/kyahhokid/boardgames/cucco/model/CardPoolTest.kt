@@ -1,57 +1,74 @@
 package com.example.kyahhokid.boardgames.cucco.model
 
 import com.example.kyahhokid.boardgames.cucco.data.Card
+import io.kotlintest.TestCaseContext
+import io.kotlintest.specs.BehaviorSpec
 import junit.framework.Assert.*
-import org.jetbrains.spek.api.Spek
-import org.jetbrains.spek.api.dsl.describe
-import org.jetbrains.spek.api.dsl.it
-import org.jetbrains.spek.api.dsl.on
-import org.junit.platform.runner.JUnitPlatform
-import org.junit.runner.RunWith
 
-@RunWith(JUnitPlatform::class)
-class CardPoolTestClass {
+class CardPoolTest: BehaviorSpec() {
 
-}
-object CardPoolTest: Spek({
+    var cardPool:CardPool = CardPool()
 
-    describe("カードプールのテスト") {
+    override fun interceptTestCase(context: TestCaseContext, test: () -> Unit) {
+        // before
+        cardPool = CardPool()
 
-        val cardPool = CardPool()
-        val testTool = testTool()
+        test() // don't forget to call test()!
 
-        on("カードを引くと") {
+        // after
+    }
 
-            assertEquals(40, cardPool.deck.size)
-            val drawCard = cardPool.draw()
+    init {
 
-            it("ランダムでカードを取り出せる") {
-                assertNotNull(drawCard)
-            }
+        given("") {
 
-            it("デッキの枚数が一枚減っている。") {
-                cardPool.getDeckSize()
-            }
+            assertEquals(cardPool.getDeckSize(), 40)
 
-            it("デッキのカードと引いたカードが３枚以上重複していない") {
+            `when`("カードを引くと") {
+                val drawCard = cardPool.draw()
 
+                then("ランダムでカードを取り出せる。") {
+                    assertNotNull(drawCard)
+                }
+
+                then("デッキの枚数が一枚減っている。") {
+                    assertEquals(cardPool.getDeckSize(), 39)
+                }
             }
         }
 
-        on("山札が0枚の状態でカードを引くと") {
+        given("山札が０枚かつ、捨て札が存在する状態で") {
+//            drawAllCard()
+//            createDiscard()
 
-        }
+            `when`("カードを引くと") {
+                val drawCard = cardPool.draw()
 
-        on("カードを捨てると") {
+                then("ランダムでカードを取り出せる。") {
+                    assertNotNull(drawCard)
+                }
 
-        }
+                then("捨て札が０枚になっている。") {
 
-        on("リフレッシュすると") {
+                }
 
+                then("捨て札のカードが山札になっている。") {
+
+                }
+            }
         }
     }
-})
 
-class testTool {
+    private fun drawAllCard() {
+        while(cardPool.getDeckSize() != 0) {
+            cardPool.draw()
+        }
+    }
 
+    private fun createDiscard() {
+        for(card in Card.values()) {
+            cardPool.disCard(card)
+        }
+    }
 }
+
