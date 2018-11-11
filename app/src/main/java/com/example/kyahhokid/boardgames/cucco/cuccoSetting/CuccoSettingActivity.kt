@@ -1,10 +1,11 @@
-package com.example.kyahhokid.boardgames
+package com.example.kyahhokid.boardgames.cucco.cuccoSetting
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.View
 import android.widget.ArrayAdapter
+import com.example.kyahhokid.boardgames.R
+import com.example.kyahhokid.boardgames.cucco.cucco.CuccoActivity
 import kotlinx.android.synthetic.main.activity_setting_cucco.*
 
 /**

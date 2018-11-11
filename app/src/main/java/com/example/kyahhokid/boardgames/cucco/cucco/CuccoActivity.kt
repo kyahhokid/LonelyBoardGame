@@ -1,4 +1,4 @@
-package com.example.kyahhokid.boardgames
+package com.example.kyahhokid.boardgames.cucco.cucco
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.widget.*
 import android.widget.LinearLayout.HORIZONTAL
 import android.widget.LinearLayout.VERTICAL
+import com.example.kyahhokid.boardgames.R
 import kotlinx.android.synthetic.main.activity_cucco.*
 
 /**
