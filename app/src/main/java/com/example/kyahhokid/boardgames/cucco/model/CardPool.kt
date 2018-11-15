@@ -26,6 +26,10 @@ class CardPool {
         disCardList.add(card)
     }
 
+    fun getDisCardList(): MutableList<Card> {
+        return disCardList
+    }
+
     fun getDeckSize(): Int {
         return deck.size
     }
