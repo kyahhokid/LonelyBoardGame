@@ -36,23 +36,26 @@ class CuccoActivity : AppCompatActivity() {
      * NPCの人数が奇数の場合は最上部に一人だけ表示する。
      */
     private fun createAllNPCView() {
-        // 最初のNPCのId
-        var startNPC = 1
+        // レイアウトIdの基準になる値
+        val baseId = EndNPCId / 2.0f + 0.5f
+        // カウンタ変数
+        var deltaId = 0.5f
 
         if(EndNPCId % 2 == 1) {
             val linearLayout = LinearLayout(this)
             linearLayout.orientation = HORIZONTAL
-            linearLayout.addView(createNPCView(startNPC), LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT, 1.0f))
+            linearLayout.addView(createNPCView(baseId.toInt()), LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT, 1.0f))
             cucco_all_npc_linear_layout.addView(linearLayout, LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT, 1.0f))
-            startNPC = 2
+            deltaId = 1.0f
         }
 
-        for(i in startNPC..EndNPCId step 2){
+        while(baseId + deltaId <= EndNPCId) {
             val linearLayout = LinearLayout(this)
             linearLayout.orientation = HORIZONTAL
-            linearLayout.addView(createNPCView(i), LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT, 1.0f))
-            linearLayout.addView(createNPCView(i + 1), LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT, 1.0f))
+            linearLayout.addView(createNPCView((baseId - deltaId).toInt()), LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT, 1.0f))
+            linearLayout.addView(createNPCView((baseId + deltaId).toInt()), LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT, 1.0f))
             cucco_all_npc_linear_layout.addView(linearLayout, LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT, 1.0f))
+            deltaId += 1.0f
         }
     }
 
