@@ -117,7 +117,7 @@
                 android:scaleType="fitStart"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/flan_normal_face"/>
+                android:src="@drawable/flandre_normal_face"/>
 
 
 

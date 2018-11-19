@@ -9,4 +9,8 @@ import com.example.kyahhokid.boardgames.cucco.data.TohoCharacter
 class Player(private val myCharacter: TohoCharacter) {
     // 所持カード
     private var myCard: Card? = null
+
+    fun getMyCharacter(): TohoCharacter {
+        return myCharacter
+    }
 }
