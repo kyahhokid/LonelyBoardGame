@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.example.kyahhokid.boardgames.R
+import kotlinx.android.synthetic.main.fragment_cucco_npc.*
 
 
 /**
@@ -33,9 +34,12 @@ class CuccoNPCFragment: Fragment() {
 
     // このフラグメントのビュー
     private var rootView: View? = null
+    // 顔のビュー
+    private var faceImageView: ImageView? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         rootView = inflater.inflate(R.layout.fragment_cucco_npc, container, false)
+        faceImageView = rootView?.findViewById(R.id.cucco_npc_face_image_view)
         return rootView
     }
 
@@ -43,6 +47,7 @@ class CuccoNPCFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         rootView = view
+        faceImageView = rootView!!.findViewById(R.id.cucco_npc_face_image_view)!!
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -52,11 +57,11 @@ class CuccoNPCFragment: Fragment() {
         val paddingDp = 40 / divided // 行数をもとにDPを計算
         val scale = resources.displayMetrics.density //画面のdensityを指定。
         val paddingPx = (paddingDp * scale + 0.5f).toInt()
-        rootView?.findViewById<ImageView>(R.id.cucco_npc_face_image_view)?.setPadding(paddingPx,paddingPx,paddingPx,paddingPx)
+        cucco_npc_background_linear_layout.setPadding(paddingPx,paddingPx,paddingPx,paddingPx)
     }
 
     fun setFace(faceId: Int) {
-        rootView?.findViewById<ImageView>(R.id.cucco_npc_face_image_view)?.setImageResource(faceId)
+        faceImageView!!.setImageResource(faceId)
     }
 
 }
