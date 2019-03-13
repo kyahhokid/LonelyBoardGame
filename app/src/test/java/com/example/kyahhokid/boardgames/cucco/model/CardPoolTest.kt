@@ -19,30 +19,30 @@ object CardPoolTest: Spek({
     val testTool = CardPoolTestTool(cardPool)
     var stringBuilder = StringBuilder()
 
-    d("hoge", "1")
+
     stringBuilder.append("A")
 
-    beforeGroup { d("hoge", "13")
+    beforeGroup {
         stringBuilder.append("M")}
 
-    beforeEachTest { d("hoge", "18")
+    beforeEachTest {
         stringBuilder.append("R")}
 
     describe("カードプールのテスト") {
-        d("hoge", "2")
+
         stringBuilder.append("B")
 
-        beforeGroup { d("hoge", "14")
+        beforeGroup {
             stringBuilder.append("N")}
-        beforeEachTest { d("hoge", "19")
+        beforeEachTest {
             stringBuilder.append("S")}
         on("カードを引くと") {
             val drawCard = cardPool.draw()
-            d("hoge", "3")
+
             stringBuilder.append("C")
             it("ランダムでカードを取り出せる") {
                 assertNotNull(drawCard)
-                d("hoge", "4")
+
                 stringBuilder.append("D")
 
                 assertEquals("", stringBuilder.toString())
@@ -50,48 +50,48 @@ object CardPoolTest: Spek({
 
             it("デッキの枚数が一枚減っている。") {
                 assertEquals(cardPool.getDeckSize(), 39)
-                d("hoge", "5")
+
                 stringBuilder.append("E")
                 assertEquals("", stringBuilder.toString())
             }
         }
 
-        d("hoge", "6")
+
         stringBuilder.append("F")
-        beforeGroup { d("hoge", "15")
+        beforeGroup {
             stringBuilder.append("0")}
-        beforeEachTest { d("hoge", "20")
+        beforeEachTest {
             stringBuilder.append("T")}
 
         on("カードを捨てると") {
-            d("hoge", "7")
+
             stringBuilder.append("G")
             it("捨てたカードの一覧を確認できる。") {
-                d("hoge", "8")
+
                 stringBuilder.append("H")
                 assertEquals("", stringBuilder.toString())
             }
         }
 
-        d("hoge", "9")
+
         stringBuilder.append("I")
-        beforeGroup { d("hoge", "16")
+        beforeGroup {
             stringBuilder.append("P")}
-        beforeEachTest { d("hoge", "21")
+        beforeEachTest {
             stringBuilder.append("U")}
 
         given("山札と捨て札が存在する状態で") {
-            d("hoge", "10")
+
             stringBuilder.append("J")
-            beforeGroup { d("hoge", "17")
+            beforeGroup {
                 stringBuilder.append("Q")}
-            beforeEachTest { d("hoge", "22")
+            beforeEachTest {
                 stringBuilder.append("V")}
             on("リフレッシュすると") {
-                d("hoge", "11")
+
                 stringBuilder.append("K")
                 it("hoge") {
-                    d("hoge", "12")
+
                     stringBuilder.append("L")
 
                     assertEquals("", stringBuilder.toString())
